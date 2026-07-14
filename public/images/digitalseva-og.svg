@@ -1,0 +1,13 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="DigitalSeva nonprofit platform preview">
+  <rect width="1200" height="630" fill="#FFF6E6"/>
+  <rect x="70" y="70" width="1060" height="490" rx="28" fill="#FFFFFF" stroke="#F7EAD0" stroke-width="4"/>
+  <circle cx="190" cy="190" r="72" fill="#8B1E3F"/>
+  <path d="M146 190c10-38 40-62 44-62s34 24 44 62" fill="none" stroke="#D4A017" stroke-width="16" stroke-linecap="round"/>
+  <rect x="160" y="194" width="60" height="70" rx="8" fill="#D4A017"/>
+  <text x="300" y="188" font-family="Arial, sans-serif" font-size="74" font-weight="900" fill="#3B2415">DigitalSeva</text>
+  <text x="302" y="252" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#8B1E3F">Global Nonprofit Management Platform</text>
+  <text x="302" y="333" font-family="Arial, sans-serif" font-size="30" fill="#5A2E0C">Constituents | Payments | Donations | Volunteers | Services | Reports</text>
+  <rect x="302" y="388" width="356" height="66" rx="12" fill="#D4A017"/>
+  <text x="480" y="431" text-anchor="middle" font-family="Arial, sans-serif" font-size="27" font-weight="900" fill="#3B2415">Request a Free Demo</text>
+  <text x="302" y="505" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#8B1E3F">No upfront software license fee. Annual service charges apply.</text>
+</svg>
