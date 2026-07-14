@@ -94,12 +94,19 @@ lib/contact.ts
 
 1. Push this project to a Git repository.
 2. Import the repository into Vercel.
-3. Set the environment variables from `.env.example`.
-4. Deploy the project.
-5. Add `digitalseva.us` in Vercel project domains.
-6. Update DNS records at the domain registrar using Vercel's instructions.
-7. Confirm HTTPS is active.
-8. Submit `https://digitalseva.us/sitemap.xml` in Google Search Console after launch.
+3. Confirm the project root is the repository root that contains `package.json`.
+4. Confirm Vercel detects the framework as Next.js.
+5. Set the environment variables from `.env.example`.
+6. Deploy the project.
+7. Test the generated `*.vercel.app` deployment URL before connecting the custom domain.
+8. Add `digitalseva.us` in Vercel project domains.
+9. Update DNS records at the domain registrar using Vercel's instructions.
+10. Confirm HTTPS is active.
+11. Submit `https://digitalseva.us/sitemap.xml` in Google Search Console after launch.
+
+If Vercel shows `404: NOT_FOUND`, first verify that the URL exists in the Vercel dashboard, the
+deployment status is ready, the custom domain is assigned to this project, and the project root points
+to this folder rather than a parent directory.
 
 ## SEO
 
