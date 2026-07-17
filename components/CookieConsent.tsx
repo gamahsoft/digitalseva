@@ -12,8 +12,12 @@ export function CookieConsent() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const existingChoice = window.localStorage.getItem(consentKey);
-    setIsVisible(existingChoice !== "accepted" && existingChoice !== "denied");
+    const frame = window.requestAnimationFrame(() => {
+      const existingChoice = window.localStorage.getItem(consentKey);
+      setIsVisible(existingChoice !== "accepted" && existingChoice !== "denied");
+    });
+
+    return () => window.cancelAnimationFrame(frame);
   }, []);
 
   function saveChoice(choice: ConsentChoice) {

@@ -25,34 +25,33 @@ export default function HomePage() {
     <>
       <JsonLd data={faqStructuredData} />
       <section className="brand-hero overflow-hidden border-b border-[#F7EAD0]">
-        <div className="header-ornament-divider" aria-hidden="true" />
-        <div className="section-shell grid gap-10 py-16 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:py-24">
+        <div className="section-shell grid gap-8 pb-12 pt-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:pb-14 lg:pt-10">
           <div>
-            <p className="mb-4 max-w-3xl text-sm font-extrabold uppercase tracking-normal text-[#8B1E3F]">
+            <p className="mb-3 max-w-3xl text-sm font-extrabold uppercase tracking-normal text-[#8B1E3F]">
               {siteContent.hero.eyebrow}
             </p>
-            <h1 className="max-w-4xl font-serif text-4xl font-black tracking-normal text-[#3B2415] sm:text-5xl lg:text-6xl">
+            <h1 className="max-w-4xl font-serif text-4xl font-black tracking-normal text-[#3B2415] sm:text-5xl lg:text-[3.35rem] lg:leading-tight">
               {siteContent.hero.headline}
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-[#5A2E0C]">{siteContent.hero.body}</p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <p className="mt-4 max-w-2xl text-base leading-7 text-[#5A2E0C] lg:text-lg">{siteContent.hero.body}</p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <ButtonLink href={siteContent.hero.primaryCta.href}>{siteContent.hero.primaryCta.label}</ButtonLink>
               <ButtonLink href={siteContent.hero.secondaryCta.href} variant="secondary">
                 {siteContent.hero.secondaryCta.label}
               </ButtonLink>
             </div>
-            <p className="mt-6 max-w-2xl rounded-lg border border-[#F7EAD0] bg-white px-4 py-3 text-sm font-bold leading-6 text-[#3B2415]">
+            <p className="mt-4 max-w-2xl rounded-lg border border-[#F7EAD0] bg-white px-4 py-3 text-sm font-bold leading-6 text-[#3B2415]">
               {siteContent.hero.offer}
             </p>
           </div>
-          <div className="pattern-card relative rounded-lg border border-[#F7EAD0] p-5 shadow-sm">
-            <div className="rounded-lg bg-[#3B2415] p-4 text-white shadow-xl">
-              <div className="mb-5 flex items-center justify-between">
+          <div className="pattern-card relative rounded-lg border border-[#F7EAD0] p-4 shadow-sm">
+            <div className="rounded-lg bg-[#3B2415] p-3 text-white shadow-xl">
+              <div className="mb-3 flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <img
                     src="/images/brand/digitalseva-mark.png"
                     alt=""
-                    className="size-12 rounded-full border border-white/20 object-cover"
+                    className="size-10 rounded-full border border-white/20 object-cover"
                     aria-hidden="true"
                   />
                   <div>
@@ -69,15 +68,15 @@ export default function HomePage() {
                   ["Volunteer signups", "76"],
                   ["Service payments", "214"],
                 ].map(([label, value]) => (
-                  <div key={label} className="rounded-lg bg-white/9 p-4">
+                  <div key={label} className="rounded-lg bg-white/9 p-3">
                     <p className="text-xs text-white/58">{label}</p>
-                    <p className="mt-2 text-2xl font-black text-white">{value}</p>
+                    <p className="mt-1 text-xl font-black text-white">{value}</p>
                   </div>
                 ))}
               </div>
-              <div className="mt-4 rounded-lg bg-white p-4 text-[#3B2415]">
+              <div className="mt-3 rounded-lg bg-white p-3 text-[#3B2415]">
                 <p className="text-sm font-black">Today at the front desk</p>
-                <div className="mt-3 grid gap-2">
+                <div className="mt-2 grid gap-1.5">
                   {["Donation received", "Family profile updated", "Volunteer interest submitted"].map((item) => (
                     <div key={item} className="flex items-center gap-2 text-sm font-semibold text-[#5A2E0C]">
                       <CheckCircle2 className="size-4 text-[#8B1E3F]" />
@@ -97,17 +96,17 @@ export default function HomePage() {
             Built for nonprofits, faith communities, and service organizations worldwide
           </p>
           <div className="mt-7 grid grid-cols-2 gap-x-4 gap-y-7 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-9">
-          {siteContent.organizations.map((organization) => (
-            <div key={organization.label} className="group text-center">
-              <AudienceIcon type={organization.icon} />
-              <p className="mt-3 text-sm font-bold leading-5 text-[#3B2415]">{organization.label}</p>
-            </div>
-          ))}
+            {siteContent.organizations.map((organization) => (
+              <div key={organization.label} className="group text-center">
+                <AudienceIcon type={organization.icon} />
+                <p className="mt-3 text-sm font-bold leading-5 text-[#3B2415]">{organization.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="section-shell pb-16">
+      <section className="section-shell pb-8 pt-10">
         <div className="rounded-lg border border-[#F7EAD0] bg-white p-6 shadow-sm lg:grid lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:gap-8">
           <div>
             <p className="text-sm font-extrabold uppercase tracking-normal text-[#8B1E3F]">
@@ -126,7 +125,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section-shell py-16">
+      <section className="section-shell pb-14 pt-8">
         <SectionHeading eyebrow="Prebuilt value" title="Start With a Platform That Is Already Built">
           <p>
             Many nonprofits spend significant time and money assembling separate tools for records,
@@ -145,7 +144,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-white py-16">
+      <section className="bg-white py-14">
         <div className="section-shell">
           <SectionHeading eyebrow="Platform features" title="Essential Nonprofit Tools in One Place" centered>
             <p>Use the existing standard capabilities to support constituents, administrators, and front-desk teams.</p>
@@ -157,7 +156,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section-shell py-16">
+      <section className="section-shell py-14">
         <SectionHeading eyebrow="User experience" title="One Platform, Multiple Ways to Serve Your Community" />
         <div className="mt-8 grid gap-5 lg:grid-cols-3">
           {siteContent.userGroups.map((group) => (
@@ -177,7 +176,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-[#FFF6E6] py-16">
+      <section className="bg-[#FFF6E6] py-14">
         <div className="section-shell">
           <SectionHeading eyebrow="Solutions" title="Designed for Faith-Based, Cultural, and Charitable Work" />
           <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
@@ -195,7 +194,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="how-it-works" className="section-shell scroll-mt-24 py-16">
+      <section id="how-it-works" className="section-shell scroll-mt-24 py-14">
         <SectionHeading eyebrow="How it works" title="From Demo to Launch Without Starting From Scratch" />
         <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {siteContent.process.map((step, index) => (
@@ -210,7 +209,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-[#3B2415] py-16 text-white">
+      <section className="bg-[#3B2415] py-14 text-white">
         <div className="section-shell grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <SectionHeading eyebrow="Annual service plan" title="What the Annual Service Covers" inverse>
             <p className="text-white/72">
@@ -229,7 +228,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section-shell py-16">
+      <section className="section-shell py-14">
         <SectionHeading eyebrow="Pricing" title="Simple Offer, Clear Boundaries" centered>
           <p>
             DigitalSeva is not positioned as a traditional upfront software-license purchase.
@@ -258,7 +257,7 @@ export default function HomePage() {
 
       <FAQSection />
 
-      <section className="bg-[#FFF6E6] py-16">
+      <section className="bg-[#FFF6E6] py-14">
         <div className="section-shell grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
           <div>
             <SectionHeading eyebrow="Request a demo" title="Ready to Modernize the Way Your Organization Serves Its Community?">
@@ -373,7 +372,7 @@ export function FeatureGrid({ limit }: { limit?: number }) {
 
 export function FAQSection() {
   return (
-    <section className="bg-white py-16">
+    <section className="bg-white py-14">
       <div className="section-shell">
         <SectionHeading eyebrow="FAQ" title="Common Questions Before a Demo" centered />
         <div className="mx-auto mt-8 grid max-w-4xl gap-3">

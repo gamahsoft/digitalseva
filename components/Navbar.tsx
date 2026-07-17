@@ -72,6 +72,7 @@ export function Navbar() {
           </nav>
         </div>
       )}
+      <div className="header-ornament-divider" aria-hidden="true" />
     </header>
   );
 }

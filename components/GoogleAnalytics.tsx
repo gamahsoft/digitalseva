@@ -10,7 +10,9 @@ export function GoogleAnalytics() {
   const [hasConsent, setHasConsent] = useState(false);
 
   useEffect(() => {
-    setHasConsent(window.localStorage.getItem(consentKey) === "accepted");
+    const frame = window.requestAnimationFrame(() => {
+      setHasConsent(window.localStorage.getItem(consentKey) === "accepted");
+    });
 
     function handleConsent(event: Event) {
       const consentEvent = event as CustomEvent<"accepted" | "denied">;
@@ -18,7 +20,10 @@ export function GoogleAnalytics() {
     }
 
     window.addEventListener("digitalseva-cookie-consent", handleConsent);
-    return () => window.removeEventListener("digitalseva-cookie-consent", handleConsent);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.removeEventListener("digitalseva-cookie-consent", handleConsent);
+    };
   }, []);
 
   if (!measurementId || !hasConsent) {
