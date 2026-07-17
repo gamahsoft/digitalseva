@@ -25,7 +25,7 @@ export default function HomePage() {
     <>
       <JsonLd data={faqStructuredData} />
       <section className="brand-hero overflow-hidden border-b border-[#F7EAD0]">
-        <div className="temple-border h-2" />
+        <div className="header-ornament-divider" aria-hidden="true" />
         <div className="section-shell grid gap-10 py-16 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:py-24">
           <div>
             <p className="mb-4 max-w-3xl text-sm font-extrabold uppercase tracking-normal text-[#8B1E3F]">
@@ -56,8 +56,8 @@ export default function HomePage() {
                     aria-hidden="true"
                   />
                   <div>
-                  <p className="text-sm font-bold text-[#D4A017]">DigitalSeva dashboard</p>
-                  <p className="text-xs text-white/58">Community operations overview</p>
+                    <p className="text-sm font-bold text-[#D4A017]">DigitalSeva dashboard</p>
+                    <p className="text-xs text-white/58">Community operations overview</p>
                   </div>
                 </div>
                 <span className="rounded-full bg-[#8B1E3F] px-3 py-1 text-xs font-bold">Ready</span>
@@ -91,16 +91,19 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section-shell py-12">
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      <section className="border-y border-[#F7EAD0] bg-white/82 py-9">
+        <div className="section-shell">
+          <p className="text-center text-sm font-extrabold uppercase tracking-normal text-[#5A2E0C]">
+            Built for nonprofits, faith communities, and service organizations worldwide
+          </p>
+          <div className="mt-7 grid grid-cols-2 gap-x-4 gap-y-7 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-9">
           {siteContent.organizations.map((organization) => (
-            <div
-              key={organization}
-              className="rounded-lg border border-[#F7EAD0] bg-white px-4 py-3 text-sm font-extrabold text-[#3B2415]"
-            >
-              {organization}
+            <div key={organization.label} className="group text-center">
+              <AudienceIcon type={organization.icon} />
+              <p className="mt-3 text-sm font-bold leading-5 text-[#3B2415]">{organization.label}</p>
             </div>
           ))}
+          </div>
         </div>
       </section>
 
@@ -273,6 +276,82 @@ export default function HomePage() {
         </div>
       </section>
     </>
+  );
+}
+
+function AudienceIcon({ type }: { type: string }) {
+  const common = {
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 1.8,
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+  };
+
+  return (
+    <span className="mx-auto grid size-16 place-items-center rounded-full bg-[#FFF6E6] text-[#8B1E3F] ring-1 ring-[#F7EAD0] transition group-hover:-translate-y-0.5 group-hover:text-[#6f1732] group-hover:shadow-sm">
+      <svg viewBox="0 0 64 64" className="size-11" aria-hidden="true">
+        {type === "temple" && (
+          <>
+            <path {...common} d="M14 48h36M18 48V28l14-10 14 10v20M24 48V34h16v14" />
+            <path {...common} d="M20 28h24M24 22h16M28 16h8M32 8v8" />
+            <path {...common} d="M16 34h32" />
+          </>
+        )}
+        {type === "church" && (
+          <>
+            <path {...common} d="M14 50h36M20 50V28l12-10 12 10v22M27 50V38h10v12" />
+            <path {...common} d="M32 10v14M26 16h12" />
+            <path {...common} d="M20 30h24" />
+          </>
+        )}
+        {type === "mosque" && (
+          <>
+            <path {...common} d="M12 50h40M18 50V32c0-8 6-14 14-14s14 6 14 14v18" />
+            <path {...common} d="M24 50V36h16v14M14 50V28M50 50V28" />
+            <path {...common} d="M12 28h4M48 28h4M32 10c-4 2-6 5-6 9M38 12c-2-2-4-3-6-3" />
+          </>
+        )}
+        {type === "synagogue" && (
+          <>
+            <path {...common} d="M12 50h40M18 50V30h28v20M24 50V38h16v12" />
+            <path {...common} d="m32 12 4 8h8l-6 6 3 8-9-5-9 5 3-8-6-6h8l4-8Z" />
+          </>
+        )}
+        {type === "community" && (
+          <>
+            <path {...common} d="M12 50h40M18 50V28h28v22M24 50V38h16v12" />
+            <path {...common} d="M16 28h32l-16-12-16 12ZM22 34h4M30 34h4M38 34h4" />
+          </>
+        )}
+        {type === "culture" && (
+          <>
+            <path {...common} d="M18 46c6-10 22-10 28 0M24 42c-7-6-8-16-2-24 8 2 13 8 10 18M40 42c7-6 8-16 2-24-8 2-13 8-10 18" />
+            <path {...common} d="M32 18v30M22 50h20" />
+          </>
+        )}
+        {type === "charity" && (
+          <>
+            <path {...common} d="M20 34c-5 0-8 3-8 7v7h16l8-7" />
+            <path {...common} d="M44 34c5 0 8 3 8 7v7H36l-8-7" />
+            <path {...common} d="M32 35 21 24c-4-5 3-13 11-6 8-7 15 1 11 6L32 35Z" />
+          </>
+        )}
+        {type === "foundation" && (
+          <>
+            <path {...common} d="M12 50h40M16 44h32M20 44V28M30 44V28M40 44V28M16 28h32" />
+            <path {...common} d="m32 12 19 10H13l19-10Z" />
+          </>
+        )}
+        {type === "volunteer" && (
+          <>
+            <path {...common} d="M20 30a7 7 0 1 0 0-14 7 7 0 0 0 0 14ZM44 30a7 7 0 1 0 0-14 7 7 0 0 0 0 14Z" />
+            <path {...common} d="M9 50c2-10 8-16 18-16M55 50c-2-10-8-16-18-16" />
+            <path {...common} d="M32 47 22 37c-4-4 2-10 10-4 8-6 14 0 10 4L32 47Z" />
+          </>
+        )}
+      </svg>
+    </span>
   );
 }
 

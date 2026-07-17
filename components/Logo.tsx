@@ -24,11 +24,15 @@ export function Logo({ compact = false, inverse = false }: { compact?: boolean; 
           </span>
           <span
             className={cn(
-              "block text-xs font-semibold uppercase tracking-normal",
+              "mt-0.5 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-normal",
               inverse ? "text-[#F4C056]" : "text-[#8B1E3F]",
             )}
           >
-            Nonprofit platform
+            <span>Serve</span>
+            <span className={cn("size-1 rounded-full", inverse ? "bg-[#D4A017]" : "bg-[#D4A017]")} aria-hidden="true" />
+            <span>Manage</span>
+            <span className={cn("size-1 rounded-full", inverse ? "bg-[#D4A017]" : "bg-[#D4A017]")} aria-hidden="true" />
+            <span>Grow</span>
           </span>
         </span>
       )}
