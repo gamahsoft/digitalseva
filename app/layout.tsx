@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Footer } from "@/components/Footer";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { CookieConsent } from "@/components/CookieConsent";
 import { Navbar } from "@/components/Navbar";
 import { siteContent } from "@/lib/content";
@@ -164,6 +165,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Navbar />
         <main id="main-content">{children}</main>
         <Footer />
+        <GoogleAnalytics />
         <CookieConsent />
       </body>
     </html>
