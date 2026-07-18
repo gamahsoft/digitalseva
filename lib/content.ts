@@ -5,7 +5,7 @@ export const siteContent = {
     name: "DigitalSeva",
     tagline: "A ready-to-use digital platform for organizations that serve their communities",
     description:
-      "DigitalSeva helps nonprofits, NGOs, charities, faith-based organizations, cultural groups, and community organizations around the world manage constituents, payments, donations, volunteers, services, and administrative operations.",
+      "DigitalSeva is an AI-powered digital platform that helps nonprofits, NGOs, charities, faith-based organizations, cultural groups, and community organizations around the world manage constituents, payments, donations, volunteers, services, and administrative operations.",
     url: "https://digitalseva.us",
     email: "sam@digitalseva.us",
     phone: "",
@@ -30,10 +30,11 @@ export const siteContent = {
     { label: "Contact", href: "/contact" },
   ],
   hero: {
-    eyebrow: "Built for nonprofits, NGOs, charities, faith-based organizations, and community groups worldwide",
+    eyebrow:
+      "AI-powered. Built for nonprofits, NGOs, charities, faith-based organizations, and community groups worldwide",
     headline: "A Ready-to-Use Digital Platform for Nonprofits That Serve Their Communities",
     body:
-      "DigitalSeva helps nonprofit and faith-based organizations around the world manage constituents, accept online and front-desk payments, publish services, promote donation opportunities, coordinate volunteers, and simplify administrative work.",
+      "DigitalSeva helps nonprofit and faith-based organizations around the world manage constituents, accept online and front-desk payments, publish services, promote donation opportunities, coordinate volunteers, and simplify administrative work with AI-assisted tools.",
     offer:
       "Start with our existing standard platform without an upfront software license fee. Affordable annual hosting, maintenance, support, configuration, and website-management plans are available for nonprofits.",
     primaryCta: { label: "Request a Free Demo", href: "/demo" },
@@ -58,8 +59,8 @@ export const siteContent = {
     },
     {
       icon: "sparkles",
-      title: "Faster Implementation",
-      text: "Avoid beginning with a blank software project. Configure an existing platform around your organization's needs.",
+      title: "AI-Assisted Operations",
+      text: "Use an AI-powered platform experience to help reduce manual work, organize information, and support everyday nonprofit administration.",
     },
     {
       icon: "lifeBuoy",

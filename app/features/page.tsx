@@ -6,7 +6,7 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata = createPageMetadata({
   title: "Features",
   description:
-    "Explore DigitalSeva features for global nonprofits, NGOs, charities, and faith-based organizations, including constituent management, online giving, front-desk payments, volunteers, services, reporting, and roles.",
+    "Explore AI-powered DigitalSeva features for global nonprofits, NGOs, charities, and faith-based organizations, including constituent management, online giving, front-desk payments, volunteers, services, reporting, and roles.",
   path: "/features",
 });
 
