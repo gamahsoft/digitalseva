@@ -1,16 +1,16 @@
-import type { Metadata } from "next";
 import { CheckCircle2 } from "lucide-react";
 import { ButtonLink } from "@/components/ButtonLink";
 import { Card } from "@/components/Card";
 import { SectionHeading } from "@/components/SectionHeading";
 import { siteContent } from "@/lib/content";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Pricing",
   description:
     "DigitalSeva offers global nonprofits, NGOs, charities, and faith-based organizations existing standard platform functionality without an upfront software license fee, with affordable annual service plans.",
-  alternates: { canonical: "/pricing" },
-};
+  path: "/pricing",
+});
 
 export default function PricingPage() {
   return (

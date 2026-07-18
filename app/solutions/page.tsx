@@ -1,16 +1,16 @@
-import type { Metadata } from "next";
 import { ButtonLink } from "@/components/ButtonLink";
 import { Card } from "@/components/Card";
 import { IconBadge } from "@/components/IconBadge";
 import { SectionHeading } from "@/components/SectionHeading";
 import { siteContent } from "@/lib/content";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Solutions",
   description:
     "DigitalSeva supports global nonprofits, NGOs, charities, foundations, temples, churches, mosques, synagogues, community centers, and cultural organizations.",
-  alternates: { canonical: "/solutions" },
-};
+  path: "/solutions",
+});
 
 export default function SolutionsPage() {
   return (

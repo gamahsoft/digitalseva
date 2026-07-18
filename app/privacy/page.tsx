@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
 import { SectionHeading } from "@/components/SectionHeading";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Privacy Policy",
   description: "Starter privacy policy for DigitalSeva. Legal review is required before launch.",
-  alternates: { canonical: "/privacy" },
-};
+  path: "/privacy",
+});
 
 export default function PrivacyPage() {
   return (

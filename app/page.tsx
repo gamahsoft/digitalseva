@@ -5,7 +5,14 @@ import { IconBadge } from "@/components/IconBadge";
 import { LeadForm } from "@/components/LeadForm";
 import { SectionHeading } from "@/components/SectionHeading";
 import { siteContent } from "@/lib/content";
+import { createPageMetadata } from "@/lib/metadata";
 import { JsonLd } from "@/lib/seo";
+
+export const metadata = createPageMetadata({
+  title: "Global Nonprofit Management Platform",
+  description: siteContent.brand.description,
+  path: "/",
+});
 
 export default function HomePage() {
   const faqStructuredData = {

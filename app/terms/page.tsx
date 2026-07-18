@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
 import { SectionHeading } from "@/components/SectionHeading";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Terms of Service",
   description: "Starter terms of service for DigitalSeva. Legal review is required before launch.",
-  alternates: { canonical: "/terms" },
-};
+  path: "/terms",
+});
 
 export default function TermsPage() {
   return (

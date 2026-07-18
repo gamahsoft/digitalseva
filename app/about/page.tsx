@@ -1,13 +1,13 @@
-import type { Metadata } from "next";
 import { ButtonLink } from "@/components/ButtonLink";
 import { SectionHeading } from "@/components/SectionHeading";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "About",
   description:
     "Learn about DigitalSeva, a ready-to-use digital platform for nonprofit, NGO, charity, foundation, and faith-based organization administration worldwide.",
-  alternates: { canonical: "/about" },
-};
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (

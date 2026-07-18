@@ -1,15 +1,15 @@
-import type { Metadata } from "next";
 import { Mail } from "lucide-react";
 import { LeadForm } from "@/components/LeadForm";
 import { SectionHeading } from "@/components/SectionHeading";
 import { siteContent } from "@/lib/content";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Contact",
   description:
     "Contact DigitalSeva to discuss nonprofit, NGO, charity, foundation, or faith-based organization platform needs worldwide, or request a free demo.",
-  alternates: { canonical: "/contact" },
-};
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (

@@ -1,14 +1,14 @@
-import type { Metadata } from "next";
 import { ButtonLink } from "@/components/ButtonLink";
 import { SectionHeading } from "@/components/SectionHeading";
 import { FeatureGrid } from "@/app/page";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Features",
   description:
     "Explore DigitalSeva features for global nonprofits, NGOs, charities, and faith-based organizations, including constituent management, online giving, front-desk payments, volunteers, services, reporting, and roles.",
-  alternates: { canonical: "/features" },
-};
+  path: "/features",
+});
 
 export default function FeaturesPage() {
   return (

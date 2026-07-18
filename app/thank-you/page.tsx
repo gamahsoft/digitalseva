@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
 import { ButtonLink } from "@/components/ButtonLink";
 import { SectionHeading } from "@/components/SectionHeading";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Thank You",
   description: "Thank you for contacting DigitalSeva.",
-  robots: { index: false, follow: false },
-};
+  path: "/thank-you",
+  noIndex: true,
+});
 
 export default function ThankYouPage() {
   return (

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Footer } from "@/components/Footer";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { CookieConsent } from "@/components/CookieConsent";
@@ -11,6 +11,12 @@ const brand = siteContent.brand;
 
 export const metadata: Metadata = {
   metadataBase: new URL(brand.url),
+  applicationName: brand.name,
+  authors: [{ name: brand.name }],
+  creator: brand.name,
+  publisher: brand.name,
+  category: "Nonprofit management software",
+  referrer: "origin-when-cross-origin",
   title: {
     default: "DigitalSeva | Global Nonprofit Management Platform",
     template: "%s | DigitalSeva",
@@ -74,12 +80,20 @@ export const metadata: Metadata = {
     description: brand.description,
     images: ["/images/digitalseva-og.svg"],
   },
+  manifest: "/manifest.webmanifest",
   ...(process.env.GOOGLE_SITE_VERIFICATION
     ? { verification: { google: process.env.GOOGLE_SITE_VERIFICATION } }
     : {}),
   ...(process.env.BING_SITE_VERIFICATION
     ? { other: { "msvalidate.01": process.env.BING_SITE_VERIFICATION } }
     : {}),
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: brand.colors.cream,
+  colorScheme: "light",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -124,6 +138,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         name: brand.name,
         url: brand.url,
         publisher: { "@id": `${brand.url}/#organization` },
+        hasPart: siteContent.navigation.map((item) => ({
+          "@type": "SiteNavigationElement",
+          name: item.label,
+          url: `${brand.url}${item.href.startsWith("/#") ? item.href : item.href}`,
+        })),
         inLanguage: "en-US",
       },
       {
@@ -141,8 +160,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         },
         offers: {
           "@type": "Offer",
-          price: "0",
-          priceCurrency: "USD",
+          availability: "https://schema.org/InStock",
+          category: "Annual service plan",
+          priceSpecification: {
+            "@type": "PriceSpecification",
+            priceCurrency: "USD",
+            description:
+              "Quoted annual hosting, maintenance, support, configuration, and website-management plans are available for nonprofits.",
+          },
           description:
             "No upfront software license fee for existing standard platform capabilities. Affordable annual hosting, maintenance, support, configuration, and website-management plans are available for nonprofits.",
         },

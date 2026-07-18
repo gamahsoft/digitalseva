@@ -1,13 +1,13 @@
-import type { Metadata } from "next";
 import { LeadForm } from "@/components/LeadForm";
 import { SectionHeading } from "@/components/SectionHeading";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Request a Demo",
   description:
     "Request a DigitalSeva demo for your nonprofit, NGO, charity, foundation, or faith-based organization and review the global platform before deciding.",
-  alternates: { canonical: "/demo" },
-};
+  path: "/demo",
+});
 
 export default function DemoPage() {
   return (
