@@ -6,7 +6,7 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata = createPageMetadata({
   title: "Features",
   description:
-    "Explore AI-powered DigitalSeva features for global nonprofits, NGOs, charities, and faith-based organizations, including constituent management, online giving, front-desk payments, volunteers, services, reporting, and roles.",
+    "Explore AI-powered tools for nonprofits, NGOs, charities, and faith-based groups to manage giving, payments, volunteers, services, and reports.",
   path: "/features",
 });
 
@@ -14,7 +14,7 @@ export default function FeaturesPage() {
   return (
     <>
       <section className="section-shell py-16">
-        <SectionHeading eyebrow="Features" title="Nonprofit Operations Built Into One Responsive Platform">
+        <SectionHeading as="h1" eyebrow="Features" title="Nonprofit Operations Built Into One Responsive Platform">
           <p>
             DigitalSeva gives nonprofits, NGOs, charities, and faith-based organizations a practical
             foundation for everyday administration, payment workflows, constituent service,

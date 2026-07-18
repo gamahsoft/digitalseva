@@ -5,14 +5,14 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata = createPageMetadata({
   title: "About",
   description:
-    "Learn about DigitalSeva, a ready-to-use digital platform for nonprofit, NGO, charity, foundation, and faith-based organization administration worldwide.",
+    "Learn about DigitalSeva, an AI-powered platform for nonprofit, NGO, charity, foundation, and faith-based administration worldwide.",
   path: "/about",
 });
 
 export default function AboutPage() {
   return (
     <section className="section-shell py-16">
-      <SectionHeading eyebrow="About DigitalSeva" title="Built for Service-Focused Organizations">
+      <SectionHeading as="h1" eyebrow="About DigitalSeva" title="Built for Service-Focused Organizations">
         <p>
           DigitalSeva exists to help nonprofit, NGO, charity, foundation, and faith-based
           organizations around the world modernize everyday operations without funding a long

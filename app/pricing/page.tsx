@@ -8,14 +8,14 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata = createPageMetadata({
   title: "Pricing",
   description:
-    "DigitalSeva offers global nonprofits, NGOs, charities, and faith-based organizations existing standard platform functionality without an upfront software license fee, with affordable annual service plans.",
+    "Affordable annual DigitalSeva plans for nonprofits, NGOs, charities, and faith-based groups with no upfront standard software license fee.",
   path: "/pricing",
 });
 
 export default function PricingPage() {
   return (
     <section className="section-shell py-16">
-      <SectionHeading eyebrow="Pricing" title="No Upfront Software License Fee for Standard Platform Capabilities">
+      <SectionHeading as="h1" eyebrow="Pricing" title="No Upfront Software License Fee for Standard Platform Capabilities">
         <p>
           Affordable annual plans cover hosting, maintenance, support, configuration, and website
           management for nonprofits. Custom development, third-party fees, payment processing,

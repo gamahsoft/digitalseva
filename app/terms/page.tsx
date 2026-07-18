@@ -10,7 +10,7 @@ export const metadata = createPageMetadata({
 export default function TermsPage() {
   return (
     <section className="section-shell py-16">
-      <SectionHeading eyebrow="Terms of Service" title="Starter Terms of Service">
+      <SectionHeading as="h1" eyebrow="Terms of Service" title="Starter Terms of Service">
         <p>
           These starter terms are not final legal terms and must be reviewed by qualified legal
           counsel before production launch.

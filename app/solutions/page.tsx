@@ -8,14 +8,14 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata = createPageMetadata({
   title: "Solutions",
   description:
-    "DigitalSeva supports global nonprofits, NGOs, charities, foundations, temples, churches, mosques, synagogues, community centers, and cultural organizations.",
+    "DigitalSeva supports nonprofits, NGOs, charities, foundations, faith communities, cultural groups, and community organizations worldwide.",
   path: "/solutions",
 });
 
 export default function SolutionsPage() {
   return (
     <section className="section-shell py-16">
-      <SectionHeading eyebrow="Solutions" title="For Organizations That Serve People, Not Software">
+      <SectionHeading as="h1" eyebrow="Solutions" title="For Organizations That Serve People, Not Software">
         <p>
           The platform is inclusive by design for organizations around the world. Configure labels,
           programs, content, and workflows around the language and needs of your community.

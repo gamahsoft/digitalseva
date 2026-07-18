@@ -5,7 +5,7 @@ export const siteContent = {
     name: "DigitalSeva",
     tagline: "A ready-to-use digital platform for organizations that serve their communities",
     description:
-      "DigitalSeva is an AI-powered digital platform that helps nonprofits, NGOs, charities, faith-based organizations, cultural groups, and community organizations around the world manage constituents, payments, donations, volunteers, services, and administrative operations.",
+      "AI-powered platform for nonprofits, NGOs, charities, and faith-based groups to manage constituents, payments, donations, volunteers, and services.",
     url: "https://digitalseva.us",
     email: "sam@digitalseva.us",
     phone: "",

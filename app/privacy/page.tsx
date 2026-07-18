@@ -10,7 +10,7 @@ export const metadata = createPageMetadata({
 export default function PrivacyPage() {
   return (
     <section className="section-shell py-16">
-      <SectionHeading eyebrow="Privacy Policy" title="Starter Privacy Policy">
+      <SectionHeading as="h1" eyebrow="Privacy Policy" title="Starter Privacy Policy">
         <p>
           This starter policy is provided for planning purposes and must be reviewed by qualified
           legal counsel before production launch.

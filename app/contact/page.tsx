@@ -7,7 +7,7 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata = createPageMetadata({
   title: "Contact",
   description:
-    "Contact DigitalSeva to discuss nonprofit, NGO, charity, foundation, or faith-based organization platform needs worldwide, or request a free demo.",
+    "Contact DigitalSeva to discuss AI-powered platform needs for your nonprofit, NGO, charity, foundation, or faith-based organization.",
   path: "/contact",
 });
 
@@ -15,7 +15,7 @@ export default function ContactPage() {
   return (
     <section className="section-shell grid gap-8 py-16 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
       <div>
-        <SectionHeading eyebrow="Contact" title="Tell Us How Your Organization Serves">
+        <SectionHeading as="h1" eyebrow="Contact" title="Tell Us How Your Organization Serves">
           <p>
             Use the form to request a demo or ask about DigitalSeva for your nonprofit, NGO,
             faith-based, charitable, foundation, or cultural organization.

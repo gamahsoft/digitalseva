@@ -12,7 +12,7 @@ export const metadata = createPageMetadata({
 export default function ThankYouPage() {
   return (
     <section className="section-shell py-20">
-      <SectionHeading eyebrow="Thank you" title="Your DigitalSeva Request Has Been Received">
+      <SectionHeading as="h1" eyebrow="Thank you" title="Your DigitalSeva Request Has Been Received">
         <p>
           Thank you for reaching out. We will review your organization details and follow up about
           the platform, demo options, and annual service plan.
