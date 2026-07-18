@@ -57,9 +57,8 @@ export default function HomePage() {
                 <div className="flex items-center gap-3">
                   <img
                     src="/images/brand/digitalseva-mark.png"
-                    alt=""
+                    alt="DigitalSeva logo"
                     className="size-10 rounded-full border border-white/20 object-cover"
-                    aria-hidden="true"
                   />
                   <div>
                     <p className="text-sm font-bold text-[#D4A017]">DigitalSeva dashboard</p>

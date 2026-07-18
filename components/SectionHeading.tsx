@@ -37,9 +37,8 @@ export function SectionHeading({
       </HeadingTag>
       <img
         src="/images/brand/lotus-divider.png"
-        alt=""
+        alt="DigitalSeva decorative lotus divider"
         className={centered ? "ornament-divider mx-auto" : "ornament-divider"}
-        aria-hidden="true"
       />
       {children && (
         <div className={`mt-4 text-base leading-8 sm:text-lg ${inverse ? "text-white/78" : "text-[#5A2E0C]"}`}>

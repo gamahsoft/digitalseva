@@ -7,9 +7,8 @@ export function Logo({ compact = false, inverse = false }: { compact?: boolean; 
       <span className="grid size-14 shrink-0 place-items-center overflow-hidden rounded-full border border-[#F7EAD0] bg-[#FFF6E6] shadow-sm">
         <img
           src="/images/brand/digitalseva-mark.png"
-          alt=""
+          alt="DigitalSeva logo"
           className="h-full w-full object-cover"
-          aria-hidden="true"
         />
       </span>
       {!compact && (
