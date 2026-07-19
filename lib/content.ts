@@ -5,7 +5,7 @@ export const siteContent = {
     name: "DigitalSeva",
     tagline: "A ready-to-use digital platform for organizations that serve their communities",
     description:
-      "AI-powered platform for nonprofits, NGOs, charities, and faith-based groups to manage constituents, payments, donations, volunteers, and services.",
+      "AI-powered platform for nonprofit communities with SEO, digital marketing, social media marketing, AI automation, and custom software solutions.",
     url: "https://digitalseva.us",
     email: "sam@digitalseva.us",
     phone: "",
@@ -32,9 +32,9 @@ export const siteContent = {
   hero: {
     eyebrow:
       "AI-powered. Built for nonprofits, NGOs, charities, faith-based organizations, and community groups worldwide",
-    headline: "A Ready-to-Use Digital Platform for Nonprofits That Serve Their Communities",
+    headline: "AI-Powered Digital Solutions for Nonprofits That Serve Their Communities",
     body:
-      "DigitalSeva helps nonprofit and faith-based organizations around the world manage constituents, accept online and front-desk payments, publish services, promote donation opportunities, coordinate volunteers, and simplify administrative work with AI-assisted tools.",
+      "DigitalSeva helps nonprofit and faith-based organizations manage operations, improve digital visibility, automate workflows, promote services, grow community engagement, and simplify administrative work with AI-assisted tools.",
     offer:
       "Start with our existing standard platform without an upfront software license fee. Affordable annual hosting, maintenance, support, configuration, and website-management plans are available for nonprofits.",
     primaryCta: { label: "Request a Free Demo", href: "/demo" },
@@ -60,7 +60,12 @@ export const siteContent = {
     {
       icon: "sparkles",
       title: "AI-Assisted Operations",
-      text: "Use an AI-powered platform experience to help reduce manual work, organize information, and support everyday nonprofit administration.",
+      text: "Use AI automation and assisted workflows to help reduce manual work, organize information, and support everyday nonprofit administration.",
+    },
+    {
+      icon: "megaphone",
+      title: "Digital Growth Services",
+      text: "Strengthen visibility with SEO, digital marketing, social media marketing, content support, and nonprofit outreach strategy.",
     },
     {
       icon: "lifeBuoy",
@@ -163,29 +168,79 @@ export const siteContent = {
   solutions: [
     {
       icon: "landmark",
-      title: "Faith-Based Organizations",
-      text: "Support regular services, constituent records, donations, payments, volunteers, and front-desk activity in one platform.",
-      examples: "Temples, churches, mosques, synagogues, and interfaith communities",
+      title: "Nonprofit Community Platforms",
+      text: "Support constituents, payments, donations, volunteers, services, reporting, and front-desk activity in one connected platform.",
+      examples: "Nonprofits, charities, foundations, NGOs, and service organizations",
     },
     {
-      icon: "building",
-      title: "Community and Cultural Centers",
-      text: "Publish programs, coordinate volunteers, manage registrations, and create a clearer digital experience for members.",
-      examples: "Cultural associations, community centers, and education programs",
+      icon: "megaphone",
+      title: "SEO and Digital Marketing",
+      text: "Improve online visibility with SEO-focused content, digital marketing support, search-ready pages, and practical growth planning.",
+      examples: "Search visibility, service pages, campaign messaging, and lead generation",
     },
     {
       icon: "handshake",
-      title: "Charitable Nonprofits",
-      text: "Promote donation opportunities, record constituent interactions, manage campaigns, and reduce manual administration.",
-      examples: "Service nonprofits, charities, foundations, and volunteer-led groups",
+      title: "Social Media Marketing",
+      text: "Support community engagement with social media planning, campaign content, announcements, and donor-facing messaging.",
+      examples: "Facebook, Instagram, LinkedIn, community updates, and outreach campaigns",
+    },
+    {
+      icon: "sparkles",
+      title: "AI Automation",
+      text: "Use AI-assisted workflows to reduce repetitive work, organize requests, support follow-ups, and simplify operational tasks.",
+      examples: "Workflow automation, content assistance, admin support, and reporting help",
+    },
+    {
+      icon: "dashboard",
+      title: "Custom Software Solutions",
+      text: "Plan and build organization-specific tools when a standard platform workflow is not enough for your operating model.",
+      examples: "Custom portals, integrations, dashboards, forms, and internal workflows",
     },
     {
       icon: "globe",
-      title: "Global Nonprofits and NGOs",
-      text: "Support distributed teams, international communities, and donor-facing workflows with a responsive platform designed for everyday nonprofit operations.",
-      examples: "NGOs, foundations, service organizations, and community networks",
+      title: "Faith-Based and Cultural Organizations",
+      text: "Support inclusive community work for faith-based, cultural, educational, and volunteer-led organizations worldwide.",
+      examples: "Temples, churches, mosques, synagogues, cultural groups, and centers",
     },
   ] satisfies Array<{ icon: IconKey; title: string; text: string; examples: string }>,
+  services: [
+    {
+      name: "Nonprofit Management Platform",
+      serviceType: "Nonprofit management software",
+      description:
+        "AI-powered platform support for constituents, payments, donations, volunteers, services, reporting, and administration.",
+    },
+    {
+      name: "SEO Services",
+      serviceType: "Search engine optimization",
+      description:
+        "SEO-focused planning and content support for nonprofit communities and service organizations.",
+    },
+    {
+      name: "Digital Marketing",
+      serviceType: "Digital marketing",
+      description:
+        "Digital marketing support for nonprofit visibility, community engagement, campaigns, and outreach.",
+    },
+    {
+      name: "Social Media Marketing",
+      serviceType: "Social media marketing",
+      description:
+        "Social media campaign and content support for community updates, donor messaging, and engagement.",
+    },
+    {
+      name: "AI Automation",
+      serviceType: "AI automation",
+      description:
+        "AI-assisted workflow automation to reduce repetitive administrative work and improve follow-up processes.",
+    },
+    {
+      name: "Custom Software Solutions",
+      serviceType: "Custom software development",
+      description:
+        "Custom software planning and development for portals, integrations, dashboards, forms, and internal workflows.",
+    },
+  ],
   process: [
     {
       title: "Request a Demo",

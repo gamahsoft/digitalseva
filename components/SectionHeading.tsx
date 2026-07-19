@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { ReactNode } from "react";
 
 export function SectionHeading({
@@ -35,9 +36,12 @@ export function SectionHeading({
       >
         {title}
       </HeadingTag>
-      <img
+      <Image
         src="/images/brand/lotus-divider.png"
         alt="DigitalSeva decorative lotus divider"
+        width={536}
+        height={59}
+        sizes="270px"
         className={centered ? "ornament-divider mx-auto" : "ornament-divider"}
       />
       {children && (

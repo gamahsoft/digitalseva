@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { ButtonLink } from "@/components/ButtonLink";
 import { Card } from "@/components/Card";
@@ -9,7 +10,7 @@ import { createPageMetadata } from "@/lib/metadata";
 import { JsonLd } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
-  title: "Global Nonprofit Management Platform",
+  title: "AI-Powered Nonprofit Digital Solutions",
   description: siteContent.brand.description,
   path: "/",
 });
@@ -55,9 +56,12 @@ export default function HomePage() {
             <div className="rounded-lg bg-[#3B2415] p-3 text-white shadow-xl">
               <div className="mb-3 flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <img
+                  <Image
                     src="/images/brand/digitalseva-mark.png"
                     alt="DigitalSeva logo"
+                    width={40}
+                    height={40}
+                    sizes="40px"
                     className="size-10 rounded-full border border-white/20 object-cover"
                   />
                   <div>
@@ -125,8 +129,8 @@ export default function HomePage() {
           <p className="mt-4 text-base leading-8 text-[#5A2E0C] lg:mt-0">
             DigitalSeva is positioned for nonprofits, NGOs, charities, foundations,
             faith-based organizations, cultural groups, and volunteer-led communities across the
-            world. The platform language can be adapted to your organization, while the standard
-            workflows keep constituent, giving, service, volunteer, and reporting operations simple.
+            world. The platform and services can support operations, SEO, digital marketing, social
+            media marketing, AI automation, custom software, and community growth.
           </p>
         </div>
       </section>
@@ -135,8 +139,8 @@ export default function HomePage() {
         <SectionHeading eyebrow="Prebuilt value" title="Start With a Platform That Is Already Built">
           <p>
             Many nonprofits spend significant time and money assembling separate tools for records,
-            payments, donations, volunteers, events, and reporting. DigitalSeva brings these
-            capabilities together in one platform.
+            payments, donations, volunteers, marketing, automation, events, and reporting.
+            DigitalSeva brings practical digital capabilities together for community-focused teams.
           </p>
         </SectionHeading>
         <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
@@ -238,8 +242,8 @@ export default function HomePage() {
         <SectionHeading eyebrow="Pricing" title="Simple Offer, Clear Boundaries" centered>
           <p>
             DigitalSeva is not positioned as a traditional upfront software-license purchase.
-            Affordable annual hosting, maintenance, support, configuration, and website-management
-            plans are available for nonprofits.
+            Affordable annual hosting, maintenance, support, configuration, marketing, automation,
+            and website-management plans are available for nonprofits.
           </p>
         </SectionHeading>
         <div className="mt-8 grid gap-5 lg:grid-cols-2">
@@ -269,7 +273,8 @@ export default function HomePage() {
             <SectionHeading eyebrow="Request a demo" title="Ready to Modernize the Way Your Organization Serves Its Community?">
               <p>
                 Tell us about your current processes and priorities. We will show you the platform,
-                review your needs, and explain the annual service options available for your organization.
+                review your needs, and explain the annual platform, marketing, automation, and
+                custom software options available for your organization.
               </p>
             </SectionHeading>
             <div className="mt-6 inline-flex items-center gap-2 text-sm font-extrabold text-[#8B1E3F]">

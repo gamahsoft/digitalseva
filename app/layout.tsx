@@ -40,6 +40,11 @@ export const metadata: Metadata = {
     "faith-based organization software",
     "volunteer management for nonprofits",
     "community organization software",
+    "nonprofit SEO services",
+    "digital marketing for nonprofits",
+    "social media marketing for nonprofits",
+    "AI automation for nonprofits",
+    "custom software for nonprofits",
   ],
   alternates: { canonical: "/" },
   icons: {
@@ -119,6 +124,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           "NGO management software",
           "charity management platform",
           "faith-based organization software",
+          "SEO services",
+          "digital marketing",
+          "social media marketing",
+          "AI automation",
+          "custom software solutions",
           "constituent management",
           "donation management",
           "volunteer management",
@@ -180,6 +190,21 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         areaServed: "Worldwide",
         serviceType: "Global nonprofit management platform hosting, maintenance, and support",
       },
+      ...siteContent.services.map((service) => ({
+        "@type": "Service",
+        "@id": `${brand.url}/#${service.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")}`,
+        name: service.name,
+        description: service.description,
+        serviceType: service.serviceType,
+        provider: { "@id": `${brand.url}/#organization` },
+        areaServed: "Worldwide",
+        audience: {
+          "@type": "Audience",
+          audienceType:
+            "Nonprofits, NGOs, charities, faith-based organizations, cultural organizations, and community organizations",
+        },
+        url: `${brand.url}/solutions`,
+      })),
     ],
   };
 

@@ -6,6 +6,9 @@ import { Logo } from "@/components/Logo";
 const footerLinks = [
   { label: "Features", href: "/features" },
   { label: "Solutions", href: "/solutions" },
+  { label: "SEO & Marketing", href: "/solutions" },
+  { label: "AI Automation", href: "/solutions" },
+  { label: "Custom Software", href: "/solutions" },
   { label: "Pricing", href: "/pricing" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },

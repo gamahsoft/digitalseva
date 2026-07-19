@@ -1,14 +1,18 @@
+import Image from "next/image";
 import { siteContent } from "@/lib/content";
 import { cn } from "@/lib/utils";
 
 export function Logo({ compact = false, inverse = false }: { compact?: boolean; inverse?: boolean }) {
   return (
     <span className="flex items-center gap-3">
-      <span className="grid size-14 shrink-0 place-items-center overflow-hidden rounded-full border border-[#F7EAD0] bg-[#FFF6E6] shadow-sm">
-        <img
+      <span className="relative grid size-14 shrink-0 place-items-center overflow-hidden rounded-full border border-[#F7EAD0] bg-[#FFF6E6] shadow-sm">
+        <Image
           src="/images/brand/digitalseva-mark.png"
           alt="DigitalSeva logo"
-          className="h-full w-full object-cover"
+          fill
+          priority={!inverse}
+          sizes="56px"
+          className="object-cover"
         />
       </span>
       {!compact && (
