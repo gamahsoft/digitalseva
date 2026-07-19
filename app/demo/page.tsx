@@ -14,7 +14,7 @@ export default function DemoPage() {
   return (
     <>
       <BreadcrumbJsonLd items={[{ name: "Home", path: "/" }, { name: "Request a Demo", path: "/demo" }]} />
-      <section className="section-shell grid gap-8 py-16 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+      <section className="section-shell grid gap-7 py-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start lg:py-12">
         <SectionHeading as="h1" eyebrow="Request a demo" title="See DigitalSeva Before You Decide">
           <p>
             Share a few details about your organization. We will review your needs, show the existing

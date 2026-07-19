@@ -37,7 +37,11 @@ export function Footer() {
         </div>
         <nav className="grid grid-cols-2 gap-3 text-sm font-semibold sm:grid-cols-3">
           {footerLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="focus-ring rounded-md text-white/76 hover:text-white">
+            <Link
+              key={`${link.href}-${link.label}`}
+              href={link.href}
+              className="focus-ring rounded-md text-white/76 hover:text-white"
+            >
               {link.label}
             </Link>
           ))}

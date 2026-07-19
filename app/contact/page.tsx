@@ -16,7 +16,7 @@ export default function ContactPage() {
   return (
     <>
       <BreadcrumbJsonLd items={[{ name: "Home", path: "/" }, { name: "Contact", path: "/contact" }]} />
-      <section className="section-shell grid gap-8 py-16 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+      <section className="section-shell grid gap-7 py-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start lg:py-12">
         <div>
           <SectionHeading as="h1" eyebrow="Contact" title="Tell Us How Your Organization Serves">
             <p>
