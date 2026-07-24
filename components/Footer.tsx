@@ -24,8 +24,9 @@ export function Footer() {
         <div>
           <Logo inverse />
           <p className="mt-5 max-w-xl text-sm leading-7 text-white/72">
-            DigitalSeva provides modern constituent, payment, donation, volunteer, service, and
-            administrative tools for nonprofit and faith-based organizations.
+            DigitalSeva provides modern constituent, payment, donation,
+            volunteer, service, and administrative tools for nonprofit and
+            faith-based organizations.
           </p>
           <a
             href={`mailto:${siteContent.brand.email}`}
@@ -49,7 +50,14 @@ export function Footer() {
       </div>
       <div className="border-t border-white/10 py-5">
         <div className="section-shell text-sm text-white/58">
-          Copyright {new Date().getFullYear()} DigitalSeva. All rights reserved.
+          {/* Copyright {new Date().getFullYear()} DigitalSeva. All rights reserved. */}
+          <p className="text-sm text-gray-500 text-center">
+            &copy; {new Date().getFullYear()}
+            <span className="mx-2 text-gray-400">•</span>
+            <span className="font-medium">DigitalSeva</span>
+            <span className="mx-2 text-gray-400">•</span>
+            All Rights Reserved.
+          </p>
         </div>
       </div>
     </footer>
