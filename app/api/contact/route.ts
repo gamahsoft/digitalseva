@@ -1,9 +1,22 @@
 import { NextResponse } from "next/server";
 import { contactPayloadFromJson, sendContactEmail } from "@/lib/contact";
+import { getClientIp, screenContactSubmission } from "@/lib/contact-security";
 
 export async function POST(request: Request) {
   try {
     const payload = contactPayloadFromJson(await request.json());
+    const security = await screenContactSubmission(payload, getClientIp(request));
+
+    if (!security.allowed) {
+      return NextResponse.json(
+        {
+          ok: security.ok,
+          message: security.message,
+        },
+        { status: security.status },
+      );
+    }
+
     const result = await sendContactEmail(payload);
 
     return NextResponse.json(result, { status: result.ok ? 200 : 400 });

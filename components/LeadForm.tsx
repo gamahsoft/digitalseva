@@ -1,6 +1,7 @@
 "use client";
 
 import { Send } from "lucide-react";
+import Script from "next/script";
 import { useId, useState } from "react";
 import { siteContent } from "@/lib/content";
 
@@ -14,9 +15,20 @@ const initialStatus: FormStatus = {
   message: "",
 };
 
+const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+
+declare global {
+  interface Window {
+    turnstile?: {
+      reset: () => void;
+    };
+  }
+}
+
 export function LeadForm() {
   const [status, setStatus] = useState(initialStatus);
   const [isPending, setIsPending] = useState(false);
+  const [contactStartedAt, setContactStartedAt] = useState(() => String(Date.now()));
   const statusId = useId();
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -39,13 +51,17 @@ export function LeadForm() {
       setStatus(result);
       if (result.ok) {
         form.reset();
+        setContactStartedAt(String(Date.now()));
         window.location.href = "/thank-you";
+      } else {
+        window.turnstile?.reset();
       }
     } catch {
       setStatus({
         ok: false,
         message: "The form could not be sent right now. Please email sam@digitalseva.us directly.",
       });
+      window.turnstile?.reset();
     } finally {
       setIsPending(false);
     }
@@ -57,6 +73,14 @@ export function LeadForm() {
       onSubmit={handleSubmit}
       aria-describedby={status.message ? statusId : undefined}
     >
+      {turnstileSiteKey && (
+        <Script
+          src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+          strategy="afterInteractive"
+          async
+          defer
+        />
+      )}
       <input
         className="hidden"
         type="text"
@@ -65,6 +89,15 @@ export function LeadForm() {
         autoComplete="off"
         aria-hidden="true"
       />
+      <input
+        className="hidden"
+        type="url"
+        name="companyWebsite"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+      />
+      <input type="hidden" name="contactStartedAt" value={contactStartedAt} readOnly />
       <div className="grid gap-3 sm:grid-cols-2">
         <Field label="Your name" name="name" autoComplete="name" required />
         <Field label="Email address" name="email" type="email" autoComplete="email" required />
@@ -88,6 +121,14 @@ export function LeadForm() {
           placeholder="Tell us about constituent records, payments, donations, services, volunteers, reporting, or current website needs."
         />
       </label>
+      {turnstileSiteKey && (
+        <div
+          className="cf-turnstile min-h-[65px]"
+          data-sitekey={turnstileSiteKey}
+          data-action="contact"
+          data-theme="light"
+        />
+      )}
       {status.message && (
         <p
           id={statusId}

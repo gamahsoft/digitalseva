@@ -16,6 +16,9 @@ export type ContactFormPayload = {
   timeline: string;
   message: string;
   website?: string;
+  companyWebsite?: string;
+  contactStartedAt?: string;
+  turnstileToken?: string;
 };
 
 const requiredFields: Array<keyof Omit<ContactFormPayload, "phone" | "website">> = [
@@ -45,11 +48,14 @@ export function contactPayloadFromJson(data: unknown): ContactFormPayload {
     timeline: clean(source.timeline),
     message: clean(source.message),
     website: clean(source.website),
+    companyWebsite: clean(source.companyWebsite),
+    contactStartedAt: clean(source.contactStartedAt),
+    turnstileToken: clean(source["cf-turnstile-response"] || source.turnstileToken),
   };
 }
 
 export function validateContactPayload(payload: ContactFormPayload): string | null {
-  if (payload.website) {
+  if (payload.website || payload.companyWebsite) {
     return "Thanks. Your request could not be accepted. Please email us directly if you need help.";
   }
 
