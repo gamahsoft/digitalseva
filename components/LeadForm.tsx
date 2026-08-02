@@ -46,7 +46,12 @@ export function LeadForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
-      const result = (await response.json()) as FormStatus;
+      const result = (await response
+        .json()
+        .catch(() => ({
+          ok: false,
+          message: "The form could not be sent right now. Please email sam@digitalseva.us directly.",
+        }))) as FormStatus;
 
       setStatus(result);
       if (result.ok) {
