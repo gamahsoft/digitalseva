@@ -2,7 +2,7 @@
 
 import { Send } from "lucide-react";
 import Script from "next/script";
-import { useId, useState } from "react";
+import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { siteContent } from "@/lib/content";
 
 type FormStatus = {
@@ -16,11 +16,25 @@ const initialStatus: FormStatus = {
 };
 
 const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+const brand = siteContent.brand;
+const deliveryError = `The form could not be sent right now. Please email ${brand.email} directly.`;
 
 declare global {
   interface Window {
     turnstile?: {
-      reset: () => void;
+      render: (
+        container: HTMLElement,
+        options: {
+          sitekey: string;
+          action?: string;
+          theme?: "light" | "dark" | "auto";
+          callback?: (token: string) => void;
+          "expired-callback"?: () => void;
+          "error-callback"?: () => void;
+        },
+      ) => string;
+      reset: (widgetId?: string) => void;
+      remove: (widgetId: string) => void;
     };
   }
 }
@@ -29,7 +43,43 @@ export function LeadForm() {
   const [status, setStatus] = useState(initialStatus);
   const [isPending, setIsPending] = useState(false);
   const [contactStartedAt, setContactStartedAt] = useState(() => String(Date.now()));
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const turnstileRef = useRef<HTMLDivElement>(null);
+  const turnstileWidgetId = useRef<string | null>(null);
   const statusId = useId();
+
+  const renderTurnstile = useCallback(() => {
+    if (!turnstileSiteKey || !turnstileRef.current || !window.turnstile || turnstileWidgetId.current) {
+      return;
+    }
+
+    turnstileWidgetId.current = window.turnstile.render(turnstileRef.current, {
+      sitekey: turnstileSiteKey,
+      action: "contact",
+      theme: "light",
+      callback: setTurnstileToken,
+      "expired-callback": () => setTurnstileToken(""),
+      "error-callback": () => setTurnstileToken(""),
+    });
+  }, []);
+
+  const resetTurnstile = useCallback(() => {
+    if (turnstileWidgetId.current) {
+      window.turnstile?.reset(turnstileWidgetId.current);
+    }
+    setTurnstileToken("");
+  }, []);
+
+  useEffect(() => {
+    renderTurnstile();
+
+    return () => {
+      if (turnstileWidgetId.current) {
+        window.turnstile?.remove(turnstileWidgetId.current);
+        turnstileWidgetId.current = null;
+      }
+    };
+  }, [renderTurnstile]);
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -50,7 +100,7 @@ export function LeadForm() {
         .json()
         .catch(() => ({
           ok: false,
-          message: "The form could not be sent right now. Please email sam@digitalseva.us directly.",
+          message: deliveryError,
         }))) as FormStatus;
 
       setStatus(result);
@@ -59,14 +109,14 @@ export function LeadForm() {
         setContactStartedAt(String(Date.now()));
         window.location.href = "/thank-you";
       } else {
-        window.turnstile?.reset();
+        resetTurnstile();
       }
     } catch {
       setStatus({
         ok: false,
-        message: "The form could not be sent right now. Please email sam@digitalseva.us directly.",
+        message: deliveryError,
       });
-      window.turnstile?.reset();
+      resetTurnstile();
     } finally {
       setIsPending(false);
     }
@@ -84,6 +134,7 @@ export function LeadForm() {
           strategy="afterInteractive"
           async
           defer
+          onLoad={renderTurnstile}
         />
       )}
       <input
@@ -103,6 +154,7 @@ export function LeadForm() {
         aria-hidden="true"
       />
       <input type="hidden" name="contactStartedAt" value={contactStartedAt} readOnly />
+      <input type="hidden" name="turnstileToken" value={turnstileToken} readOnly />
       <div className="grid gap-3 sm:grid-cols-2">
         <Field label="Your name" name="name" autoComplete="name" required />
         <Field label="Email address" name="email" type="email" autoComplete="email" required />
@@ -128,10 +180,8 @@ export function LeadForm() {
       </label>
       {turnstileSiteKey && (
         <div
-          className="cf-turnstile min-h-[65px]"
-          data-sitekey={turnstileSiteKey}
-          data-action="contact"
-          data-theme="light"
+          ref={turnstileRef}
+          className="min-h-[65px]"
         />
       )}
       {status.message && (

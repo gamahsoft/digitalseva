@@ -8,8 +8,9 @@ export const siteContent = {
       "AI-powered platform for nonprofit communities with SEO, digital marketing, social media marketing, AI automation, and custom software solutions.",
     url: "https://digitalseva.us",
     email: "sam@digitalseva.us",
-    phone: "",
-    phoneHref: "",
+    phone: "(502) 749-5987",
+    phoneHref: "tel:+15027495987",
+    availability: "7 days a week, remote-friendly",
     colors: {
       ink: "#3B2415",
       maroon: "#8B1E3F",

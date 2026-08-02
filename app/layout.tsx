@@ -209,7 +209,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   };
 
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <body suppressHydrationWarning>
         <JsonLd data={structuredData} />
         <Navbar />

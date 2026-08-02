@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Mail } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { siteContent } from "@/lib/content";
 import { Logo } from "@/components/Logo";
 
@@ -28,13 +28,24 @@ export function Footer() {
             volunteer, service, and administrative tools for nonprofit and
             faith-based organizations.
           </p>
-          <a
-            href={`mailto:${siteContent.brand.email}`}
-            className="focus-ring mt-5 inline-flex items-center gap-2 rounded-lg text-sm font-bold text-[#D4A017]"
-          >
-            <Mail className="size-4" />
-            {siteContent.brand.email}
-          </a>
+          <div className="mt-5 grid gap-2">
+            <a
+              href={`mailto:${siteContent.brand.email}`}
+              className="focus-ring inline-flex items-center gap-2 rounded-lg text-sm font-bold text-[#D4A017]"
+            >
+              <Mail className="size-4" />
+              {siteContent.brand.email}
+            </a>
+            {siteContent.brand.phone && siteContent.brand.phoneHref && (
+              <a
+                href={siteContent.brand.phoneHref}
+                className="focus-ring inline-flex items-center gap-2 rounded-lg text-sm font-bold text-[#D4A017]"
+              >
+                <Phone className="size-4" />
+                {siteContent.brand.phone}
+              </a>
+            )}
+          </div>
         </div>
         <nav className="grid grid-cols-2 gap-3 text-sm font-semibold sm:grid-cols-3">
           {footerLinks.map((link) => (

@@ -1,4 +1,4 @@
-import { Mail } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { LeadForm } from "@/components/LeadForm";
 import { SectionHeading } from "@/components/SectionHeading";
 import { siteContent } from "@/lib/content";
@@ -25,13 +25,29 @@ export default function ContactPage() {
               SEO, digital marketing, social media marketing, AI automation, and custom software needs.
             </p>
           </SectionHeading>
-          <a
-            href={`mailto:${siteContent.brand.email}`}
-            className="focus-ring mt-6 inline-flex items-center gap-2 rounded-lg font-extrabold text-[#8B1E3F]"
-          >
-            <Mail className="size-5" />
-            {siteContent.brand.email}
-          </a>
+          <div className="mt-6 grid gap-3">
+            <a
+              href={`mailto:${siteContent.brand.email}`}
+              className="focus-ring inline-flex items-center gap-2 rounded-lg font-extrabold text-[#8B1E3F]"
+            >
+              <Mail className="size-5" />
+              {siteContent.brand.email}
+            </a>
+            {siteContent.brand.phone && siteContent.brand.phoneHref && (
+              <a
+                href={siteContent.brand.phoneHref}
+                className="focus-ring inline-flex items-center gap-2 rounded-lg font-extrabold text-[#8B1E3F]"
+              >
+                <Phone className="size-5" />
+                {siteContent.brand.phone}
+              </a>
+            )}
+            {siteContent.brand.availability && (
+              <p className="text-base font-semibold leading-7 text-[#3B2415]">
+                <strong className="font-extrabold">Availability:</strong> {siteContent.brand.availability}
+              </p>
+            )}
+          </div>
         </div>
         <LeadForm />
       </section>
