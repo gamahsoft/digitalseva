@@ -60,14 +60,23 @@ export function Footer() {
         </nav>
       </div>
       <div className="border-t border-white/10 py-5">
-        <div className="section-shell text-sm text-white/58">
-          {/* Copyright {new Date().getFullYear()} DigitalSeva. All rights reserved. */}
-          <p className="text-sm text-gray-500 text-center">
-            &copy; {new Date().getFullYear()}
-            <span className="mx-2 text-gray-400">•</span>
-            <span className="font-medium">DigitalSeva</span>
-            <span className="mx-2 text-gray-400">•</span>
-            All Rights Reserved.
+        <div className="section-shell flex flex-col items-center justify-center gap-2 text-center text-sm text-white/58 sm:flex-row sm:gap-3">
+          <p>
+            &copy; {new Date().getFullYear()} DigitalSeva. All rights reserved.
+          </p>
+          <span className="hidden text-white/30 sm:inline" aria-hidden="true">
+            |
+          </span>
+          <p>
+            Powered by{" "}
+            <a
+              href="https://gamahsoft.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="focus-ring rounded-sm font-semibold text-[#D4A017] transition-colors hover:text-[#F7EAD0]"
+            >
+              GamahSoft
+            </a>
           </p>
         </div>
       </div>
